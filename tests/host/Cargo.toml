@@ -8,7 +8,10 @@ publish = false
 
 [dependencies]
 wire = { path = "../.." }
-mold = { git = "https://github.com/shuyra-arche/mold.git", rev = "f52501f4c91b686eded8b4bcd743b4e96084b7f9" }
+mold = { package = "kernel-api-macros", git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
+
+[dev-dependencies]
+kernel-api-wire = { git = "https://github.com/shuyra-arche/kernel.git", rev = "a9986c82127cf25183bf5c30e7d42e4a9376b734" }
 
 [lib]
 path = "lib.rs"
