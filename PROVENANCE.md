@@ -92,3 +92,20 @@ facade over the canonical owner package; nothing above is rewritten.
   the original `mold` repository; and the test-only
   `wire-host-tests -> kernel-api-wire` dev edge. No fixture source and no code
   was re-typed or rewritten for this graph.
+
+## Stage: canonical SDK consumer update
+
+- The root `kernel-api-wire` dependency, the host fixture's `mold` alias for
+  `kernel-api-macros`, and its direct `kernel-api-wire` identity dependency now
+  share Kernel revision `90d43dbf3ee43fd146f487718eb39e88f2507c05`.
+- Both checked-in lockfiles resolve those packages to that exact revision.
+  Existing registry package versions and checksums are unchanged.
+- Facade source, existing behavior fixtures, and identity fixtures are unchanged.
+  No local path patch or second codec owner is introduced.
+- Validation used the installed `nightly-2026-10-09` Cargo, rustc, and rustdoc:
+  all eight host tests passed and the RV64 library built with `--locked`.
+  Cargo metadata confirmed one `kernel-api-wire` owner in each dependency graph
+  and the host macro package from the same Kernel revision. The declared
+  `nightly-2026-09-04` toolchain was not exercised in this stage.
+
+The earlier revision and extraction records above remain historical evidence.
